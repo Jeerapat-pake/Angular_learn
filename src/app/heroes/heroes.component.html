@@ -1,0 +1,28 @@
+{{hero | json}}
+<br>
+<br>
+<br>
+
+
+{{heroFormControl.value | uppercase}}
+<br>
+
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+
+  </div>
+
+<form [formGroup]="heroFormGroup">
+    <input type="text" formControlName="id"><br><br>
+    <input type="text" formControlName="name">
+
+
+</form>
+<!-- ngIf สามารถเขียน If ใน Template(HTML) ได้-->
+<span 
+*ngIf="heroFormControl.errors" 
+style="color: red;">
+This field is required</span>
+<br>
+{{heroFormControl.errors | json}}
